@@ -1,4 +1,4 @@
-Subsetting
+Sub setting
 dogs["height"] > 50
 by doing dogs[dogs["height"] > 50] -> We will see the rows which have the height more than 50.
 
@@ -33,7 +33,7 @@ dogs["weight_kg"].agg(pct30) -> This will give the output
 It can also be used on more than one column by selecting,
 dogs[["weight_kg", "height_cm"].agg(pct30) -> This will use agg on multiple columns.
 
-dogs["weight_kg"].cumsum() -> cumum() -> cummilative sum, for the first value it shows the same value, for the second value it shows the sum of first and the second dog, for the third dog it shows sum of first, second, third dog. The last on is the sum of all the dogs.
+dogs["weight_kg"].cumsum() -> cumsum() -> cumulative sum, for the first value it shows the same value, for the second value it shows the sum of first and the second dog, for the third dog it shows sum of first, second, third dog. The last on is the sum of all the dogs.
 
 Pandas also has other such methods such as:-
 1. .cummax() -> Cummilative Maximum

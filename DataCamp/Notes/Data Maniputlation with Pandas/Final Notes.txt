@@ -1,0 +1,33 @@
+DataFrame:- 
+A data frame is a 2-D data structure with columns of potentially of different types.
+Methods which we can use with a dataframe :-
+1. head() -> Shows the first 5 rows of the dataset.
+2. info() -> Displays the name's of columns and the datatype they contain, and whether they have any missing values.
+3. shape -> It tuples out the no. of rows, and the no. of columns. Since this is an attribute instead of method, we write it without parentheses.
+4. describe() -> Computes some numerical statistics for the numerical columns.
+5. count -> The number of non missing values in each column.
+6. Sub setting -> dogs[dogs["height"] > 50] -> We will see the rows which have the height more than 50.
+7. Selecting single name -> dogs[dogs["breed"]=="Labrador"] -> This will filter the the dogs which are labrador.
+8. Selecting multiple values -> dogs["color"].isin(["Black", "Brown"]).
+9. Adding a column -> dogs["new_column_name"] = dogs["present_column"] / 100.
+10. Sorting -> 
+    I -> bmi_lt_100 = dogs[dogs["bmi"] < 100] -> Default value of ascending is true.
+    II -> bmi_lt_100_height = bmi_lt_100.sort_values("height_values", ascending=False)
+    special printing -> bmi_lt_100_height[["name", "height_cm", "bmi"]].
+11. Mathematical Functions ->
+    I -> dogs["height_cm"].mean()
+    II -> .median()
+    III -> .mode()
+    IV -> .min()
+    V -> .max()
+    VI -> .cumsum() -> Cumulative sum -> (First -> First), (Second -> First + Second), (Third -> First + Second + Third)
+    VII -> .cummax() -> Cumulative Maximum
+    VIII -> .cummin() -> Cumulative Minimum
+    IX -> .cumprod() -> Cumulative product
+    X -> .value_counts() -> This will give the no. of dogs of each breed.
+        .value_counts(sort=True) -> This will sort the breed's with the highest no first.
+        .value_counts(normalize=True) -> Normalize argument can be used to turn the counts into proportions of the total.
+        .value_counts(sort=True, normalize=True)
+12. The agg method allows you to compute custom summary statistics.
+13. Dropping a column -> .drop_duplicates(subset='name_of_the_column')
+    Similarly for 2 columns -> .drop_duplicates(subset=['name_of_the_column_1', 'name_of_the_column_2'])
