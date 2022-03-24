@@ -1,0 +1,9 @@
+Module:- 
+Group related tools in python.
+Makes it easy to know where to look for a particular tool
+E.g. of Modules:-
+1. matplotlib - which creates chart
+2. pandas - loads tabular data 
+3. scikit-learn - performs machine learning
+4. spicy - constains statistics functions
+5. nltk - works with text data.

@@ -1,0 +1,45 @@
+Dictionaries
+Dictionaries help in connecting 2 sepreate arrays without the help of their 
+indexs.
+
+Dictionaries are implemented within culy bracket {}
+	{
+		"key":value,
+		"key1":value1, ...
+	}
+
+world = {
+		"afganistan":30.55,
+		"albania":2.77,
+		"algeria":39.21
+	}
+
+To print somekey from dictionary, 
+we use print('albania' in world)
+
+to find population of albania we type world["albania"]
+You pass the key in the square brackets and you get the corresponding value.
+
+We can print out all the keys through print(world.keys()) method.
+
+All the keys in the dictionaery should be unique.
+Keys have to be immutable objects(Can not be changed after they are created).
+Only list is muttable in python
+
+To add data to the world dictioanry we can,
+world["sealand"]=0.00027
+This will add the sealand to the world dictionary.
+We can also check by, "sealand" in world -> true.
+
+With the same syntax we can also change the value.
+To remove the sealand from the world dictionary
+del(world["sealand"])
+
+THe list is a sequence of number that are indexed by a range of numbers.
+A dictinary is indexed by unique key, that can be any immutable type.
+
+If you have a collection of values where the order matters, and you want to 
+easily get entire subset of data, you'll want to go with a list.
+
+If you need some kind of a lookup table, where looking for data should be fast
+and where you can specify unique keys, a dictionary is a preffered option.

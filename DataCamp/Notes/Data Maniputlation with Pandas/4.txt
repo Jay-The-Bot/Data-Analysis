@@ -1,0 +1,34 @@
+.columns -> gives the columns present in a dataframe.
+.index -> gives index object of row numbers.
+
+.set_index('column_1') -> With this we can move a column from the body
+to the index of the dataframe. 
+To undo the above operation you can reset the index.
+.reset_index()
+.reset_index(drop=True) -> allows you to discard an index. It will entirely remove the 
+column.
+
+dogs[dogs['name'].isin(['Bella', 'Stella'])] == dogs_ind.loc[['Bella', 'Stella']]
+
+dog_ind3 = dogs.set_index(['breed', 'color']) -> THese are called multi level indexes
+or hierarchical indexes. color is nested in the outer breed index.
+
+To subset on outer level use can use loc ->
+dog_ind3.loc[['Labrador', 'Brown']]
+TO subset inner level, you need to pass a list of tuples ->
+dog_ind3.loc[[('Labrador', 'Brown'), ('Chihuahua', 'Tan')]]
+df.loc[("a", "b"):("c", "d")] -> Slice inner piece of a dataframe. 
+
+Sort by index values -> .sort_index() -> It sorts all index levels
+from outer to inner, in ascending order.
+
+Control the sorting ->
+.sort_index(level=['color', 'breed'], ascending=[True, False])
+
+For the .loc method you only need to give the column name.
+
+For the .isin you need to give ->
+df[df['column_1'].isin(y)]
+
+List of tuples ->
+[(tuple-1), (tuple-2)]

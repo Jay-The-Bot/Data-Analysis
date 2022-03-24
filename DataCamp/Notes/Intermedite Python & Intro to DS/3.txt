@@ -1,0 +1,11 @@
+DataFrames can also have spaces and special characters.
+
+How to select columns from a DataFrame?
+-> 1. suspect = credit_records['suspect']
+printing suspect will show us all the values of that particular column.
+
+2. If the columns string only contains letters, numbers, underscore,
+we can also use dot notation.
+price = credit_records.price
+Printing proce will show us all the content of the price column
+

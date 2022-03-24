@@ -1,0 +1,46 @@
+Create line plots using Python Module: matplotlib.
+plt is the alias that we use when importing matplotlib.
+Riddhi&3905
+
+to import matplotlib
+
+from matplotlib import pyplot as plt
+plt.title("Plot Title", fontsize=20)
+plt.xlabel("Label")
+plt.ylabel("Frequency")
+plt.plot(x_values, y_values)
+plt.plot(x_values, y_values, label ="Values")
+plt.legend(color="green") // To add the characters to the chart
+plt.show()
+plt.text(xcord, ycord, "Text Message")
+
+To change color of a line
+plt.plot(x, y1, color="Yellow")
+All the colors should be from web colors
+https://en.wikipedia.org/wiki/Web_colors
+
+plt.plot(x,y1, linewidth=3)
+This will increase the width of the line 
+
+plt.plot(x, y1, linestyle='-')
+LineStyle: 
+	1. -
+	2. --
+	3. -.
+	4. :
+
+plt.plot(x, y1, marker='x')
+Marker:
+	1. x
+	2. s
+	3. o
+	4. d
+	5. *
+	6. h
+
+plt.style.use('fivethirtyeight')
+Style:
+	1. fivethirtyeight
+	2. ggplot
+	3. seaborn
+	4. default

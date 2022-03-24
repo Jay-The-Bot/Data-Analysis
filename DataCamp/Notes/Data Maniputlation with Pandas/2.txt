@@ -1,0 +1,41 @@
+Subsetting
+dogs["height"] > 50
+by doing dogs[dogs["height"] > 50] -> We will see the rows which have the height more than 50.
+
+dogs[dogs["breed"]=="Labrador"] -> This will filter the the dogs which are labrador.
+
+International Standard Date Format :- YYYY-MM-DD
+
+When you need to select a multiple values we use
+dogs["color"].isin(["Black", "Brown"])
+
+Add a Column
+dogs["height_m"] = dogs["height_cm"]/100 -> This will add a new column height_m and it's values would be height_cm / 100.
+
+bmi_lt_100 = dogs[dogs["bmi"] < 100] -> Filters the dogs with bmi greater than 100.
+bmi_lt_100_height = bmi_lt_100.sort_values("height_values", ascending=False) -> Sort's values with according to the height_values, in descending order.
+bmi_lt_100_height[["name", "height_cm", "bmi"]] -> Only prints the name, height, bmi column.
+
+We can get the mean by dogs["height_cm"].mean() , we can also calculate median and mode through .median() and .mode()
+
+.min() -> selects the min from a column and max by -> .max()
+
+The agg method allows you to compute custom summary statistics.
+
+E.g:- 
+def pct30(column):
+	return column.quantile(0.3)
+The above code computes 30th percentile of a Dataframe column.
+
+Now we can use the func as.
+dogs["weight_kg"].agg(pct30) -> This will give the output 
+
+It can also be used on more than one column by selecting,
+dogs[["weight_kg", "height_cm"].agg(pct30) -> This will use agg on multiple columns.
+
+dogs["weight_kg"].cumsum() -> cumum() -> cummilative sum, for the first value it shows the same value, for the second value it shows the sum of first and the second dog, for the third dog it shows sum of first, second, third dog. The last on is the sum of all the dogs.
+
+Pandas also has other such methods such as:-
+1. .cummax() -> Cummilative Maximum
+2. .cummin() -> Cummilative Minimun
+3. .cumprod() -> Cummilative product 

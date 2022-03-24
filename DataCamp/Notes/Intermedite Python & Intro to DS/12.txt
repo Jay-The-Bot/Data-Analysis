@@ -1,0 +1,19 @@
+For loop:- 
+for index, height in enumerate(fam):
+	print("index:" + str(index) + ":" + str(height))
+
+For printing 2 or more use enumerate.
+Wee need to convert everything to str to add everything together.
+
+THis method wont work on Dictionaries, and dataframes.
+
+for key, value in world.items() :
+	print(key + "--" + str(value))  -> This will work for Dictionaries too
+
+for an multiple numpy array we need to use the function np.editor(array)
+
+for val in np.editor(meas):
+	print(val)
+
+Dictionaries require a method.
+Numpy arrays require a function.

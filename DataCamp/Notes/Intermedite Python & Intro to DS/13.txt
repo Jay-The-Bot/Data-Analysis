@@ -1,0 +1,14 @@
+Pandas Dataframes:- 
+We use the iterrows method
+
+for printing name and capitals
+
+for lab, row in brics.iterrows(_:
+	print(lab + ": " + row["capital"])
+
+
+To add a new column to a DataFrame we use apply function
+
+brics["name_length"] = bricks["country"].apply(len)
+
+This will create a new column with alen function in the lengths of all the coutry's names in it.

@@ -1,0 +1,5 @@
+np.random.rand() -> Will generate a randome function.if you don't specify any arguments, it generates a random float between zero and one.
+
+np.random.seed() -> sets the random seed, so that your results are reproducible between simulations. As an argument, it takes an integer of your choosing. If you call the function, no output will be generated.
+
+np.random.randint(0,2) -> Will randomly genreate either 0 or 1

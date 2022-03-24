@@ -1,0 +1,46 @@
+Pandas - 
+1. High level data manipulation language.
+2. Built on numpy 
+
+import a csv(comma sepreated values)
+brics = pd.read_csv("path/to/bricks.csv", index_col = 0)
+
+index_col will set the first column as the index column rather than giving it numbers itself.
+
+Index and select data in a dataframe
+brics["country"] printing this will make pythin to print out the complete country row.It is of the datatype pandas.core.series.Series
+
+Pandas.series - 1D array that can be labbeled, just like dataframe. Otherwise if you combine together a bunch of series you can create a dataframe.
+
+bricks[["country"]] - This will print a dataframe will all the countries name in it. 
+
+bricks[1:4] - will print out rows 1 to 3 the first row is not used.
+
+Square brackets have limited functionallity.
+Ideally we need a 2D numpy array, there you also use square brackets with index or slice after the comma reffered as columns.
+
+To do this with pandas we need to extend our functionality to the loc and iloc functions.
+
+loc - Technique to select parts of the data based on the labels.
+iloc - is Position based. 
+
+brics.loc["RU"] - We get a pandas series with all the russia's informantion.
+To get a dataframe we have to put the dataframe inside another pair of brackets.
+brics.loc[["RU"]]
+
+We can also select multiple rows at the same time.
+brics.loc[["RU", "IN", "CN"]] - this will provide the output for all the 3 rows.
+
+brics.loc[["RU", "IN", "CN"], ["country", "capital"]] - this will provide 3 rows with only the columns which have been specified.
+
+We can also do the above vice-versa -> brics.loc[:, ["country", "captial"]] -> this will show all rows but only some columns.
+
+iloc 
+
+In iloc for the first one brics.iloc[[1]] -> will give the same output as loc with RU in it.
+
+For list, brics.iloc[[1, 2, 3]] -> and again the same result.
+
+brics.iloc[[1, 2, 3], [0, 1]]
+
+brics.iloc[:, [0, 1]] 

@@ -1,0 +1,36 @@
+Pandas is a module for working with tabular data, or data that has rows and columns
+E.g:- Spreadsheet and Database tables
+
+Pandas Features:- 
+1. Load tabular data from multiple sources
+2. Search for particular rows and columns 
+3. Calcualte aggregate statistics
+4. Combine data from multiple sources 
+
+Pandas introduces a new data type which is called DataFrame,
+which represents tabular data.
+
+How to use pandas:- 
+1. Load the data in the dataframe. 
+One of the easiest way to create DataFrame is by using a CSV file.
+CSV - Comma Separated Values, and is a common way of storing tabular data as a
+text - only file.
+YOu can Download a CSV vesion of data from an excel spreadsheet, SQL database,
+or a Google Sheet.
+
+Import Pandas:-
+import pandas as pd 
+
+Turning CSV to dataframe:-
+df = pd.read_csv('ransom.csv')
+
+df.head() - This just selects the first 5 rows
+in order to see that we need to put df.head() inside the print function
+
+Another way of learning more about the db is:- 
+Inspecting the DataFrame
+df.info() - We put this inside the print statement
+IN this we can see the names of the columns, number of rowsm and data
+type of each column.
+This method os useful for csv having many columns where using head would be
+hard.

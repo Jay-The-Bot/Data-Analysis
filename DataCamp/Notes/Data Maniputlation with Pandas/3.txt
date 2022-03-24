@@ -1,0 +1,59 @@
+To drop the duplicate names:-
+vet_visits.drop_duplicates(subset='name') -> .drop_duplicates(subset='column_1')
+
+For 2 dogs with same name and different breeds ->
+vet_visits.drop_duplicates(subset=['name', 'breed'])
+
+To count the no. of breeds
+unique_dogs["breed"].value_counts() -> This will give the no. of dogs of each breed.
+
+unique_dogs["breed"].value_counts(sort=True) -> This will sort the breed's with the highest no first.
+
+unique_dogs["breed"].value_counts(normalize=True) -> Normalize argument can be used to turn the counts into proportions of the total.
+
+Summaries by group:- 
+
+dogs[dogs['color'] == 'Black']['weight_kg'].mean()
+
+dogs.groupby('color')['weight_kg'].mean() -> We can group by the color variable select the weight column.
+
+dogs.groupby('color')['weight_kg'].agg([min, max, sum])
+
+Group by multiple column ->
+dogs.groupby(['color', 'breed'])['weight_kg'].mean()
+
+Group by multiple column and aggregate ->
+dogs.groupby(['color', 'breed'])[['weight_kg', 'height_cm']].mean()
+
+Double brackets are used to select a number of columns.
+
+Pivot Tables:- 
+Pivot tables are other way of  calculating grouped summary statistics.
+
+dogs.groupby('color')['weight_kg'].mean() == dogs.pivot_table(values='weight_kg', index='color')
+THe values argument is the column that you want to summarize, and the index column is the column that
+you want to group by.By default, pivot_table takes the mean value for each group.
+
+For different statistics
+dogs.pivot_table(values='weight_kg', index='color', aggfunc=np.median)
+
+Mean and median functions come in the numpy library so we need to use
+np.mean() and np.median() for calculating mean and median.
+
+For multiple statistics at a time ->
+dogs.pivot_table(values='weight_kg', index='color', aggfunc=[np.mean, np.median])
+
+Pivot on 2 variables ->
+dogs.groupby(['color', 'breed'])[['weight_kg', 'height_cm']].mean()
+
+dogs.pivot_table(values='weight_kg', index='color', columns='breed')
+This will create a lot of Nan because of missing values
+
+Instead of having we can do -> 
+dogs.pivot_table(values='weight_kg', index='color', columns='breed'. fill_value=0)
+
+IF we set the margins to be true , the last row and last column of the pivot table will contain
+the mean of all the values in the column or row, not including the missing values even the filled in
+ones.
+
+print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))

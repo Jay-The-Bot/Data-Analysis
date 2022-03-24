@@ -1,0 +1,11 @@
+Bar Chart
+plt.bar(x-axis, y-axis)
+plt.bar(df.precinct, df.pet_abductions, yerr=df.error)
+yerr will add a error bar to the bar chart
+plt.barh(x-axis, y-axis) it is a horizontal bar chart.
+
+Stacked Bar Chart 
+plt.bar(df.precinct, df.dog, label='Dog')
+plt.bar(df.precinct, df.cat, bottom=df.dog, label='Cat')
+plt.legend()
+plt.show()

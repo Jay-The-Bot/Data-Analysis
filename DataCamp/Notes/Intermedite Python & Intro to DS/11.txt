@@ -1,0 +1,19 @@
+Filtering pandas dataframe
+
+We can do it through, 
+is_huge = brics["area"] > 8
+brics[is_huge]
+
+This will give us a all the rows from the brics dataframe which are bigger than
+8 in area
+
+This can also be done as a one liner
+brics[brics["area"] > 8]
+
+We can also use the logical_and, logical_or, and the other functions of the numpy libraries.
+By importing np
+np.logical_and(brics["area"] > 8, bricks["area"] < 10)
+
+To show the data we can use
+
+bricks[np.logical_and(brics["area"] > 8, bricks["area"] < 10)]

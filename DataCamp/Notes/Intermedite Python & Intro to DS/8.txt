@@ -1,0 +1,1 @@
+plt.xscale('log') will put the x-axis on a logarithmic scale.

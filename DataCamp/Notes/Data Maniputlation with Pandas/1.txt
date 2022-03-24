@@ -1,0 +1,30 @@
+Pandas is a python package for data manipulation. It can also be used for data visualization. 
+
+Pandas is built on 2 essential python packages, numpy and Matplotlib.
+
+Numpy:- Provides easy dataa manipulation, pandas use it to store the data.
+Matplotlib:- Powerful data visualization capabilities
+
+DataFrames:- 
+head() -> Shows the first 5 rows of the dataset.
+info() -> Displays the name's of columns and the datatype they contain, and whether they have any missing values.
+shape -> It tuples out the no. of rows, and the no. of columns. Since this is an attribute instead of method, we write it without parentheses.
+describe() -> Computes some numerical statistics for the numerical columns.
+	count -> The number of non missing values in each column.
+
+A dataframe has 3 attributes accesible using attributes, the values attribute contains the data attribute in a 2-D Numpy array. The other 2 components of a dataframe are columns and rows. The column attribute contains the column name and the index attribute contains the row numbers or row names. 
+
+columns
+index
+
+Change the order of the row by sorting them .sort_values("column_name")
+We can also do it in the opposite order .sort_values("column_name", ascending=False).
+
+We can also multiple variables using a list of values by passing a list of column _names such as .sort_values(["column_1", "column_2"])
+This will first sort the column_1 then the column_2.
+To change the direction the values are sorted in,
+.sort_values(["column_1", "column_2"], ascending=[True, False]).
+
+To view multiple selected columns we need 2 pairs of square brackets.
+dogs[["column_1", "column_2"]].
+THe outer brackets are responsible for subsetting the data frame. Inner Square brackets are creating a list of column names to subset.

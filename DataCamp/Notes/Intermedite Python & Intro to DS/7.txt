@@ -1,0 +1,12 @@
+Histogram:-
+plt.hist(gravel.mass) // Default 10 bins
+plt.show()
+
+plt.hist(gravel.mass, bins=40) // THis will have 40 bins
+plt.hist(data, range=(xmin, xmax))
+
+Normalization reduces the height of each bar by a constant factor so that the
+sum of the areas of each bar adds to one.
+
+Normalization helps in making 2 histograms comparable even if the sample sizes 
+are different.

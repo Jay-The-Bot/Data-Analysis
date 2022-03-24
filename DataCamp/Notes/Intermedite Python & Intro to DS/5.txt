@@ -1,0 +1,11 @@
+Scatter plot
+plt.scatter(df.age, df,height) -> plt.scatter(x-axis, y-axis)
+plt.xlabel('Age(in months)')
+plt.ylabel('Height (in inches)')
+
+plt.scatter(df.age, df.height, color='green', marker='s')
+
+Alpha(Transperency) 
+0 < alpha < 1
+It is the transperency and makes each marker transperent.
+The smaller the alpha the more stransperent the parameter.

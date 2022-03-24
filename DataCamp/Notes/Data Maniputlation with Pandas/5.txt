@@ -1,0 +1,36 @@
+YOu can also sort the dataframe but first we 
+need to sort the index.
+dogs.set_index(['breed', 'color']).sort_index()
+
+To slice rows at the outer level of a index you call loc, passing
+the first and last values separated by a colon.
+Technique -> dogs_srt.loc["Chow Chow": "Poodle"]
+Differences:-
+1. Specify row values rather than row indexes.
+2. Final value is included.
+
+The same technique does not work for the inner index level.
+
+The correct approach of slicing at inner index levels is to pass the
+first and last positions as tuples.
+
+dogs_srt.loc[("Labrador", "Brown") : ("Schnauzer", "Grey")]
+
+Slicing Columns ->
+dogs_srt.loc[:, "name": "height_cm"]
+
+Slice twice ->
+dogs_srt.loc[("Labrador", "Brown") : ("Schnauzer", "Grey"), "name":"height_cm"]
+
+We slice the dates with the same syntax as the other types. The first and last date are
+passed as strings.
+
+dogs.loc["2014-08-25":"2016-09-16"] -> Slicing by dates
+
+You can also slice by partial dates.
+dogs.loc["2014":"2016"] -> pandas interpret this as slicing from the start of
+2014 to the end of 2016
+
+Slice by row/column number ->
+dogs.iloc[2:5, 1:4] -> 2 arguments first one for row and the second one for the column.
+Unlike loc the final values are not included in the slice.
