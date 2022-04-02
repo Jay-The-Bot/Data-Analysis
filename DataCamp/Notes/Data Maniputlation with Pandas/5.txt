@@ -1,4 +1,4 @@
-YOu can also sort the dataframe but first we 
+You can also sort the dataframe but first we 
 need to sort the index.
 dogs.set_index(['breed', 'color']).sort_index()
 

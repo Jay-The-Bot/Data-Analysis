@@ -1,0 +1,43 @@
+dogs_height_by_breed_vs_color = dog_pack.pivot_table("height_cm", index = "breed", columns = "color")
+
+The first argument is the column name contains the value to aggregate, index argument is lists the columns to
+group by and display in rows, and the columns agreement lists the columns to group by and display in column.
+
+Pivot tables are just Data Frames with sorted indexes.
+
+.loc + slicing is a powerful combo ->
+Dogs_height_by_breed_vs_color.loc["Chow Chow" : "Poodle"]
+
+For calculating summary statistics such as mean we have axis arguments.
+
+Dogs_height_by_breed_vs_color.mean(axis="index") -> The default value is index which means we calculate
+statistics across the rows. Here the mean is calculated for each color, that is 'across the breeds'. 
+The output would be same if we didn’t have the axis argument. 
+
+To calculate summary statistics across each column we use ->
+Dogs_height_by_breed_vs_color.mean(axis="columns")
+Here the mean height is calculated for each breed.
+
+Pivot tables are a special case since every column contain the same datatype.
+
+You can access the components of a date (year, month and day) using code of the form dataframe["column"].dt.component. For example, the month component is dataframe["column"].dt.month, and the year component is dataframe["column"].dt.year.
+
+Get mean temp by year -> temp_by_country_city_vs_year.mean()
+
+Highest mean temp = mean_temp_by_year[mean_temp_by_year == mean_temp_by_year.max()] -> The same is for the mean.
+
+Visualizing your dataframe
+
+We can create a histogram by -> dog_pack["height_cm].hist()
+THe plot will be showed by plt.show() command.
+x-axis -> height_cm
+y-axis -> number of dogs in each height range.
+
+We can adjust the number of bars present in the histogram using the bins argument.
+
+To compute average weight of each breed
+avg_weight_by_breed = dog_pack.groupby("breed")["weight_kg"].mean() -> group by breed select the weight giving
+us the average of each breed
+
+We can plot the bar plot using
+avg_weight_by_breed.plot(kind="bar")

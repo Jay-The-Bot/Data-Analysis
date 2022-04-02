@@ -1,0 +1,18 @@
+A dictionary is a way of storing the data in a dataframe.
+
+We can create a dictionary by using ->
+my_dict = {
+    "key_1" : value1,
+    "key_2" : value2,
+    "key_3" : value3
+}
+
+We can access the value in the dictionary using the keys ->
+e.g -> my_dict['key_1'] --> value1.
+
+We can create dataframe using the 2 imp methods
+1. From a list of dictionaries -> In this method we add the data to the dictionary row by row.
+2. From dictionary of list -> In this method we add the data column by column.
+
+We can convert a dictionary to a frame using ->
+pd.DataFrame(my_dict) -> This wil give the o/p as a dataframe

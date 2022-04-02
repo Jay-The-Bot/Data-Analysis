@@ -1,0 +1,17 @@
+Missing values
+
+We can check whether there is some missing value in a dataframe 
+by -> dogs.isna() -> This will give True/False output for the missing values.
+
+If we do dogs.isna().any() -> we one value for each column whether missing values are present
+in that column or not.
+
+dogs.isna().sum() -> will give the sum of total Nan values in a column and gives a column wise total.
+
+We can also visualize it by plotting it dogs.isna().sum().plot(kind='bar')
+
+To remove the rows that contain missing value ->
+dogs.dropna()
+
+replace missing value with another value ->
+dogs.fillna(0) -> will fill the missing values with 0

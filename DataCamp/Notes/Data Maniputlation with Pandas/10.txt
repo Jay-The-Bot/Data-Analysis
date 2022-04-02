@@ -1,0 +1,11 @@
+CSV -> Comma Separated Values 
+common data store type
+
+we can put the csv data in a dataframe using a handy dataframe func
+pd.read_csv('new_dogs.csv')
+
+to convert a file to csv we can use
+new_dogs.to_csv('new_dogs_with_bmi')
+
+A way to sort the values -> 
+airline_totals.sort_values("bumps_per_10k", ascending=False)

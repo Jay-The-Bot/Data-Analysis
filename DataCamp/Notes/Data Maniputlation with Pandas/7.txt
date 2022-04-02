@@ -1,0 +1,30 @@
+Visualizing your dataframe
+
+We can create a histogram by -> dog_pack["height_cm].hist()
+THe plot will be showed by plt.show() command.
+x-axis -> height_cm
+y-axis -> number of dogs in each height range.
+
+We can adjust the number of bars present in the histogram using the bins argument.
+
+To compute average weight of each breed
+avg_weight_by_breed = dog_pack.groupby("breed")["weight_kg"].mean() -> group by breed select the weight giving
+us the average of each breed
+
+We can plot the bar plot using
+avg_weight_by_breed.plot(kind="bar")
+
+Line plots are great for visualizing changes in numeric variables over time
+
+sully.plot(x="date", y="weight_kg", kind="line", rot=45) ->
+This will create a line plot which will have date as the x axis
+weight_kg as the y axis and rot will rotate the labels by 45 degrees
+
+Scatter plots are great for visualizing relationships between two variables.
+
+plots can also be layered on top of each other.
+dog_pack[dog_pack["sex"]=="F"]["height_cm"].hist() -> this will be behind
+dog_pack[dog_pack["sex"]=="M"]["height_cm"].hist() -> this will be forward
+
+Adding a legend to the plt
+plt.legend(["conventional", "organic"])
