@@ -1,0 +1,17 @@
+A left join return all rows of data from the left table and
+only those rows from the right table where the key columns match.
+
+To merge 2 df using left join we use ->
+movies_tagline = movies.merge(taglines, on='id', how='left')
+
+The default value of how is inner.
+
+Whenever there isn't a matching ID in the matching table, a null value is entered 
+for the tag line. 
+
+NaN == Null
+
+A left join will return all of the rows from the left table. If those rows in the left table
+match multiple rows in the right table, then all of those rows will be returned. 
+Therefore, the returned rows must be equal to if not greater than the left table. 
+Knowing what to expect is useful in troubleshooting any suspicious merges.

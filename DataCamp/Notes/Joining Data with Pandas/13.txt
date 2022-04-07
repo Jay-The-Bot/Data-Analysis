@@ -1,0 +1,13 @@
+Selecting data with .query() ->
+.query('some selection statement')
+
+1. Accepts the input of string
+2. Input string similar to statement after the where clause in the SQL statement
+
+E.g -> stocks.query('nike >= 90') == Returns all the rows in stocks where Nike is greater than
+or equal to 90.
+stocks.query('nike >= 90 and disney < 140')
+
+stocks.query('nike >= 96 or disney < 98')
+
+stocks.query('stock=="disney" or (stock == "nike" and close < 90)')

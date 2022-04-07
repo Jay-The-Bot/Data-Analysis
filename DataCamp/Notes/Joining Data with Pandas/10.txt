@@ -1,0 +1,35 @@
+Verifying the integrity ->
+
+Both the merge and concat method have special features that allow us to verify the structure
+of our data.
+
+Possible merging issus ->
+1. Unintentional one-to-many relationships.
+2. Unintentional many-to-many relationships.
+3. Duplicate records possibly unintentionally introduced.
+
+.merge(validate=None) -> Checks if the merge is one of the specified type ->
+1. one_to_one
+2. one_to_many
+3. many_to_one
+4. many_to_many
+
+tracks.merge(specs, validate=one_to_one) -> In the result the merge error is raised.
+When we set the validate argument to one_to_many no error is raised.
+
+Verifying concatenations ->
+.concat(verify_integrity=False) -> 
+1. Check whether new concatenated index contains duplicates.
+2. Default value os false.
+3. However if set it to true, it will check if there are duplicate values in the index and
+raise an error if there are.
+4. It will only check the index values not the columns.
+
+Why verify integrity and what to do
+Why:
+1. Real world data is not always clean.
+What to do:
+1. Fix incorrect data
+2. Drop duplicate rows 
+
+If you receive a MergeError or a ValueError, you can fix the incorrect data or drop duplicate rows.

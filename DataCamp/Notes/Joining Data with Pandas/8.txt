@@ -1,0 +1,37 @@
+Filtering Joins ->
+
+Mutating joins ->
+Combines data from two tables based on matching observations in both tables.
+
+Filtering Joins ->
+
+Semi join->
+A semi join filters the left table down to those observations those have match
+in the right table.
+1. It returns only the intersection(If and only both left and right table have matching rows).
+2. Returns only columns from the left column and not the right column. 
+3. No duplicates from the left table are returned.
+
+Steps for semi join ->
+1. genres_tracks = genres.merge(top_tracks, on='gid) -> Merge the 2 tables with inner join.
+2. genres['gid'].isin(genres_tracks['gid']) -> It compares every gid in the genres table to
+every gid in the genres_tracks table. -> This will return a boolean series of true and false values.
+3. top_genres = genres[genres['gid'].isin(genres_tracks['gid'])] -> To combine everything we subset the genres
+table. We have completed a semi join.
+
+Anti join ->
+An anti join returns the observations in the left table that do not have matching
+observation in the right table.
+1. Returns the left table excluding the intersection.
+2. Returns only the observation from left table not the right table.
+
+Steps for anti join ->
+1. genres_tracks = genres.merge(top_tracks, on='gid', how='left', indicator=True) -> The first step is to
+use a left join returning all the rows from the left table.
+indicator=True -> .merge() method adds a (_merge) column to the output. This column tells the source
+of each row.
+2. gid_list = genres_tracks.loc[genres_tracks['_merge] == 'left_only', 'gid'] -> Next we use the loc accessor
+and the _merge column to select the rows that appeared in the left table and return only the 'gid'
+column from the genres_tracks table.
+3. non_top_genres = genres[genres['gid'].isin(gid_list)] -> We use the isin() method to filter the rows
+with gid in gid_list. 

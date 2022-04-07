@@ -1,0 +1,9 @@
+Inner join
+
+To perform inner join on two dataframes ->
+wards_censes = wards.merge(census, on='ward'); == This will merge the 2 dataframes
+wards and census as on the ward column. And create a dataframe and name it to wards_censes.
+
+This method will add suffixes to your columns if there are 2 or more columns with the same name.
+To control this behaviour ->
+wards_censes = wards.merge(census, on='ward', suffixes=(_ward, _cen))

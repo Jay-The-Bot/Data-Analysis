@@ -1,0 +1,14 @@
+Merging a table with itself ->
+
+This is also known as self join we do this to change the order of the data
+in the table.
+
+original_sequels = sequels.merge(sequels, left_on='sequel', right_on='id', suffixes=['_org', '_seq'])
+
+print(original_sequels[,['title_org', 'title_seq']].head()) -> This will only print
+the title_org and the title_seq table from the original_sequels.
+
+When to merge a table with itself ->
+1. Hierarchical relationships (Employee, Manager)
+2. Sequential relationships (Logistics movement)
+3. Graph data (Network of friends)

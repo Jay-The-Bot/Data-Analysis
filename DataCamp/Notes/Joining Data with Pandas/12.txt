@@ -1,0 +1,19 @@
+merge_asof() ->
+Another method for ordered or time-series data
+The merge_asof() method is similar to a ordered left join.
+
+Unlike an ordered left join, merge_asof() will match on the nearest value columns rather than equal values, 
+it also follows the less than or equal to rule.
+Whatever columns you merge it must all be sorted.
+
+pd.merge_asof(visa, ibm, on='date_time', suffixes=('_visa', '_ibm'))
+
+pd.merge_asof(visa, ibm, on='date_time', suffixes=('_visa', '_ibm'), direction='forward') ->
+This will change the behavior of the method to select the first row in the right table whose
+'on' key is greater than equal to left key's left column.
+The default value for direction argument is 'backward'.
+'nearest' -> where the rows with the nearest times are matched.
+
+When to use merge_asof() ->
+1. Data sampled from a process
+2. Developing a training set no data leakage.

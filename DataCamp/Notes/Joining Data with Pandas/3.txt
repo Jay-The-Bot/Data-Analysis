@@ -1,0 +1,15 @@
+Merging Multiple Dataframes ->
+
+Merge using 2 values ->
+grants.merge(licenses, on=['address', 'zip'])
+
+grants.merge(licenses, on=['address', 'zip'])
+\
+.merge(wards, on='ward', suffixes=('_bus', '_ward')) -> 
+Python backslash method allows you to add a second merge on the next line.
+
+We can also merge multiple columns by ->
+For 3 tables
+df1.merge(df2, on='col2')\
+.merge(df3, on='col3')
+

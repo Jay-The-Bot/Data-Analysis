@@ -1,0 +1,21 @@
+Other joins ->
+
+Right join ->
+
+It will return all the rows from the right table and only includes those from the 
+left table that have matching values.
+
+It is the mirror opposite of the left join.
+
+tv_movies = movies.merge(tv_genre, how='right', left_on='id', right_on='movie_id')
+
+The left_on and right_on allows ud to tell the merge key columns from each table
+to merge the tables.
+
+Outer join ->
+
+An outer join will return all the rows from both the tables regardless there
+is a match between tables.
+
+action_scifi['genre_act'].isnull() -> selects all the columns which contain
+the null value.

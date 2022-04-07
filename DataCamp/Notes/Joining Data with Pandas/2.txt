@@ -1,0 +1,5 @@
+One to one relationships -> 
+In a one to one relationship, every-row in the left table is related to one and only row in the right table. 
+
+One to many relationships ->
+Every row in the left table is related to one or more rows in the right table.

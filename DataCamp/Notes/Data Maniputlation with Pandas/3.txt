@@ -57,3 +57,6 @@ the mean of all the values in the column or row, not including the missing value
 ones.
 
 print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
+
+The .agg() method can use a dictionary where the keys are the columns to perform the aggregation
+on and the values are strings of functions names.

@@ -1,0 +1,39 @@
+Concatenate 2 tables vertically ->
+
+In pandas we can use the .concat() method can concatenate both vertical and horizontal.
+axis=0, vertical.
+
+Basic concatenation ->
+pd.concat([inv_jan, inv_feb, inv_mar]) -> For the axis argument 0 is the default value
+So we don't need to mention it.
+The result is a vertically combined table. Each tables index value will be retained.
+
+If the index contains no important information ->
+pd.concat([inv_jan, inv_feb, inv_mar], ignore_index=True) -> The result will be index
+will go from 0 to n-1.
+
+If we want to associate specific keys to the original tables ->
+pd.concat([inv_jan, inv_feb, inv_mar], ignore_index=False, keys=['jan', 'feb', 'mar']) ->
+We can provide a list of label to the keys argument.
+Imp -> Make sure that the ignore_index is False since you cannot add a key and 
+ignore index at the same time. 
+This will give us a multi index table.
+
+Combine tables with different column names ->
+The concat method by default will include all the columns in the different table it
+is combining.
+For those missing information present in some tables it will show NaN.
+
+pd.concat([inv_jan, inv_feb, inv_mar], sort=True) -> The sort argument will alphabetically sort
+the different column names in the result.
+
+If we only want the matching column between tables ->
+pd.concat([inv_jan, inv_feb, inv_mar], join='inner') -> It's default value is outer which is why
+concat by default includes all of the columns. The sort argument has no effect when the join is inner.
+
+.append() -> Simplified version of .concat() method
+It supports ignore_index and sort
+Does not support keys and join. Join == Outer (default)(can't be changed).
+append is a dataframe method
+
+inv_jan.append([inv_feb, inv_mar], ignore_index=True, sort=True)
