@@ -1,0 +1,2 @@
+Introduction to Data Visualization with Matplotlib ->
+Matplotlib allows for us to control of the plot.
