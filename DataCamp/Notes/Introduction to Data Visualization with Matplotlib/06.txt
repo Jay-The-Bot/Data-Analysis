@@ -1,0 +1,26 @@
+Annotating time-series data ->
+Annotations are usually small pieces of text that refer to a particular part of the
+visualization, focusing our attention on some feature of our data and explaining this feature.
+
+This means drawing an arrow at a particular point of data and being able to include text to explain it.
+ax2.annotate(">1 degree", xy=(pd.Timestamp("2015-10-06"), 1)) -> 
+It takes the string we would like and the x, y coordinate of where to place the text.
+Here the value to annotate has the x-position of the Timestamp of that date.
+The pd.Timestamp method is used for the getting the exact x row.
+We use pandas time-stamp object to define that.
+
+Positioning the text ->
+The annotate method takes an extra xy argument that selects the xy position of the text.
+ax2.annotate(">1 degree", xy=(pd.Timestamp("2015-10-06"), 1), xytext=(pd.Timestamp("2008-10-06"), -0.2))
+
+Adding the arrow to the Annotations ->
+ax2.annotate(">1 degree", xy=(pd.Timestamp("2015-10-06"), 1), xytext=(pd.Timestamp("2008-10-06"), -0.2), arrowprops={})
+THe keyword for doing this is called arrowprops, which stands for arrow properties.
+This keyword argument takes input a dictionary that defines the property of the arrow
+that we would like to use.
+If we pass in empty dictionary as used the arrow will have default properties.
+
+We can also customize the appearance of the arrow.
+ax2.annotate(">1 degree", xy=(pd.Timestamp("2015-10-06"), 1), xytext=(pd.Timestamp("2008-10-06"), -0.2), arrowprops={"arrowstyle":"->", "color":"gray"})
+
+More about this -> https://matplotlib.org/2.0.2/users/annotations.html

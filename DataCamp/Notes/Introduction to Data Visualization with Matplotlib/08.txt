@@ -1,0 +1,22 @@
+Quantitative Comparisons: Histograms
+This visualization is useful because it shows us the entire distribution
+of values within a variable.
+
+x-axis is the values in the variable and the height of the bar
+represents the number of observations within a particular bin of values.
+
+Labels are important in a histogram as we cant tell which part of data is which one.
+ax.hist(mens_rowing['Height'], label='Rowing', bins=5)
+ax.hist(mens_rowing['Height'], label='Gymnastics', bins=5)
+
+default bins = 10
+
+If we provide a set of values to bins that will be set as the bounderies between bins ->
+ax.hist(mens_rowing['Height'], label='Rowing', bins=[150, 160, 170, 180, 190, 200, 210])
+ax.hist(mens_rowing['Height'], label='Gymnastics', bins=[150, 160, 170, 180, 190, 200, 210])
+
+The bars if the gymnastics histogram are occluding this information. THe occlusion can be
+eliminated by changing the type of histogram that is used.
+ax.hist(mens_rowing['Height'], label='Rowing', bins=[150, 160, 170, 180, 190, 200, 210], histtype='step')
+ax.hist(mens_rowing['Height'], label='Gymnastics', bins=[150, 160, 170, 180, 190, 200, 210], histtype='step')
+Step -> Displays histogram as thin lines instead of solid bar.

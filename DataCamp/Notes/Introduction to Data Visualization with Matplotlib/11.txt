@@ -1,0 +1,11 @@
+Changing the plot style ->
+plt.style.use("ggplot")
+
+To go back to the default style -> 
+plt.style.use("default")
+
+There many types of styles ->
+1. bmh
+2. seaborn-colorblind
+3. etc. 
+

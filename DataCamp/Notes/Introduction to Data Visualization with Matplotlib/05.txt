@@ -1,0 +1,22 @@
+Plotting Time Series with different variables ->
+We use the method twinx to create a twin of axes. -> 
+This means two axes share the same x-axes, but the y-axes are separate, but the
+y -axes are separate.
+ax2 = ax.twinx()
+We add the other variable to the second axes object and show the figure.
+
+This will create a y-axis on each side of the plot one for the C02, and the other
+for the temperature variable.
+
+ax.tick_params('y', color='blue) -> This method takes either 'y' or 'x' as its
+first argument, pointing to the fact we are modifying the parameters of the y-axis ticks
+and tick labels.
+
+Ticks -> The numbers on each of the axes.
+
+define the above as a function ->
+def plot_timeseries(axes, x, y, color, xlabel, ylabel):
+    axes.plot(x, y)
+    axes.set_xlabel(xlabel)
+    axes.set_ylabel(ylabel)
+    axes.tick_params('y', colors=color)

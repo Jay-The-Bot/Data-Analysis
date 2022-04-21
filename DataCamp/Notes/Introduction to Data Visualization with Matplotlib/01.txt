@@ -1,2 +1,13 @@
 Introduction to Data Visualization with Matplotlib ->
-Matplotlib allows for us to control of the plot.
+Matplotlib allows for us to completely control of the plot.
+
+Their are many ways to use matplotlib -> Object orientated way (is used here)
+The plt.subplots() command creates 2 different objects: 
+1. fig -> Figure -> The figure is a container that holds everything you that you see on a page.
+2. ax -> Axes -> The part of the page that holds thee data.
+fig, ax = plt.subplots()
+
+It is the canvas on which we draw on which we will draw our data and visualize it.
+
+The plotting commands are the methods of the axes object.   
+E.g. -> ax.plot(seattle_weather['month'], seattle_weather['mly-tagv-normal'])

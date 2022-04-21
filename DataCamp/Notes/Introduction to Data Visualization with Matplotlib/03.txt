@@ -1,0 +1,28 @@
+In matplotlib small multiples are called subplots.
+They are used when there is too much data in a plot.
+
+Small multiples are typically arranged on the page as a grid with rows and columns.
+fig, ax = plt.subplot(3, 2)
+This will create a plots for 3 rows, and 2 columns.
+Before adding any data we will get a total of 6 diagrams.
+ax.shape -> (3, 2) -> array of axis object with a shape of 3, 2.
+
+To add data we would have to index in this object and call the plot
+method on an element of an array. 
+ax[0, 0].plot(seattle_weather["Months"], seattle_weather["MLY-PRCP-NORMAL"], color='b')
+
+There would be some cases for situations where you have only one row and only one column of plots.
+In this case the resulting array will be one dimensional and you will only have to provide one index
+to access the elements of the array.
+E.g. -> fig, ax = plt.subplots(2, 1)
+
+We can use .set_xlabel and .set_ylabel or any other function on all the plots.
+
+If we know that the plots will be on top of each other then we only add the .set_xlabel
+to the bottom plot.
+
+To make sure all the subplots have the same range if y-axis values, we 
+initialize the figure and its subplots with the key-word argument sharey to true.
+E.g. -> fig, ax = plt.subplots(2, 1, sharey=True)
+This means both subplots will have the same range if y-axis values, based on the data
+from both datasets.

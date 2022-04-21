@@ -1,0 +1,18 @@
+Customizing your plots - 
+marker = "o" -> Circles
+marker = "v" -> Triangles
+
+Linestyle ->
+linestyle = '--' -> Dashed linestyle
+linestyle = 'None' -> No line shown only points
+
+Color ->
+color='r' -> Red color to the line.
+We can also use, color='red' and the output will be the same.
+
+Axes label ->
+ax.set_xlabel("Time")
+ax.set_ylabel("Something")
+
+Title ->
+ax.set_title("Something")

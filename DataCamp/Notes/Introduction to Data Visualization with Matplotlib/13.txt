@@ -1,0 +1,8 @@
+Why automate ?
+Ease and speed
+Flexibility
+Robustness
+Reproducibility
+
+Getting unique values of column ->
+sports = summer_2016_medals["Sport"].unique()

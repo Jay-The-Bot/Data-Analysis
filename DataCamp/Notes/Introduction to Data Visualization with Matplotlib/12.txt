@@ -1,0 +1,32 @@
+Saving a figure to file ->
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals['Gold'])
+ax.set_xtickslabels(medals.index, rotation=90)
+ax.set_ylabel("Number of Medals")
+// To save a file we use fig.savefig()
+fig.savefig('gold_medals.png') -> THis will save the figure with a name of gold_medals.png
+
+PNG format -> Provides lossless compression of your image. High quality, high space.
+
+We can also use jgp format 
+JPG format -> Uses lossy compression that can be used to create figures that take up less space
+and less bandwidth.
+
+We can also change the quality of the image by setting the quality ->
+fig.savefig('gold_medals.jpg', quality=50)
+
+We should avoid value above 95 because at that point compression is no longer effective.
+
+fig.savefig('gold_medals.svg') ->
+Choosing a svg format will create a vector graphics file where different elements can be
+edited in detail by advanced software such as gimp, Adobe Illustrator.
+
+Another keyword to control the quality of the images is the dpi argument ->
+DPI -> Dots per Inch
+fig.savefig('gold_medals.png', dpi=300) -> The higher the densely the image will rendered.
+
+To control the size of the images we can use ->
+fig.set_size_inches([5,3]) -> This function takes a sequence of numbers first number takes the 
+width of the figure and the second number takes the height of the figure.
+
+So setting the size would also determine the aspect ratio of the figure. 

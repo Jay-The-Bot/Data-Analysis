@@ -1,0 +1,19 @@
+Quantitative comparison of scatter plot: 
+Bar charts shows us the values of ine variable across different conditions, 
+such as different countries.
+Bi-variate comparisons -> Compare the values of different variables across observations.
+This involves the values of 2 different variables.
+A standard visualization of bi-variate comparison is a scatter plot.
+ax.scatter(climate_change['co2'], climate_change['relative_temp'])
+The first argument will correspond to the distance to the height of x-axis,
+the second argument will correspond to the height along the y-axis.
+
+We can customize scatter plots in a manner that is similar to the customization
+that we use in other plots.
+E.g. -> eighties = climate_change['1980-01-01':'1989-12-31']
+We can also use the color of the points to encode a third variable,
+providing additional information about the comparison.
+
+ax.scatter(climate_change['co2'], climate_change['relative_temp'], c=climate_change.index)
+
+If we enter the index as input to the c-keyword, this variable will get encoded as color. 

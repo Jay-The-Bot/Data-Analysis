@@ -1,0 +1,32 @@
+Statistical Plotting:
+Statistical Plotting is a set of method for visualizing to make comparisons.
+
+ax.bar("", mens_rowing['Height'].mean(), yerr=mens_rowing['Height'].std())
+ax.bar("", mens_['Height'].mean(), yerr=mens_gymnastics['Height'].std())
+.std() -> standard deviation of the column.
+There are atleast 2 ways to add a error bar, above we added the error bar as an argument to the bar chart.
+
+Adding error bars to a line plot ->
+ax.errorbar(seattle_weather['MONTH'], seattle_weather['MLY-TAVG-NORMAL'], yerr=seattle_weather['MLY-TAVG-STDDEV'])
+ax.errorbar(austin_weather['MONTH'], austin_weather['MLY-TAVG-NORMAL'], yerr=austin_weather['MLY-TAVG-STDDEV'])
+
+Like the plot method this method takes a sequence of x values, in this case 'MONTH' column.
+And a sequence of y values, in this case the column with normal average monthly temperature.
+yerr can take a column of the data that contains the std() deviation of the average monthly temperatures.
+Similar to before this adds verticals markers to the plot.
+
+The second way is the box plot.
+It is implemented as the method of the axes object. We can call it sequences of the sequences.
+ax.boxplot([mens_rowing['Height'], mens_gymnastics['Height']]) -> and pass this list to the method.
+Boxplot doesnt know the variables on each column we add that separately.
+ax.set_xticklabels(['Rowing', 'Gymnastics'])
+ax.set_yticklabel('Height (cm)')
+
+This kind of plot shows us several landmarks in each distribution.
+The red line indicates the median height. The edges of the box portion at the center,
+indicate the inter-quartile range of the data, between the 25% and the 75% percentiles.
+The whiskers at the end if the thin bars indicate one and half times the size of the inter-quartile
+range beyond the 75th and the 25th percentiles.
+This should encompass 99% of the distribution if the data is Gaussian or normal.
+Points that appear beyond the whiskers are outliers. That means they have values larger or smaller
+than you would expect for 99percent of the data in a Gaussian or normal distribution. 

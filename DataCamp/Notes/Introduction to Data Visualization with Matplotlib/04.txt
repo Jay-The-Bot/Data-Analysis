@@ -1,0 +1,7 @@
+Plotting Time - Series Data
+time-series are excellent tools to detect patterns in the data.
+climate_change.index  -> Shows the index column.
+
+While plotting the line 
+
+We can access the time series of x-variable by .index variable.

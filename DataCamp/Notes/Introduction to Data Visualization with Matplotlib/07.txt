@@ -1,0 +1,25 @@
+Quantitative comparisons: bar-charts
+
+Bar charts shows us the value of a variable in different conditions.
+
+index_col=0, in the read_csv function if we give this input ->
+Then the first column of the data will become the index of the dataframe.
+
+When the x-axis ticks are too long they overlap with each other,
+we can fix it by ->
+ax.set_xtickslabel(medals.index, rotation=90) -> (Method)
+This will rotate each tick by 90 degree.
+
+Stacked bar chart ->
+ax.bar(medals.index, medals['gold'])
+ax.bar(medals.index, medals['silver'], bottom=medals['gold'])
+ax.bar(medals.index, medals['bronze'], bottom=medals['gold'] + medals['silver'])
+
+bottom -> That the bottom of this column should be at a height of previous column's 
+data.
+
+To add label to each of the following we use the label keyword ->
+ax.bar(medals.index, medals['gold'], lable='gold')
+ax.bar(medals.index, medals['silver'], bottom=medals['gold'], lable='silver')
+ax.bar(medals.index, medals['bronze'], bottom=medals['gold'] + medals['silver'], lable='bronze')
+ax.legend() -> To show the labels
