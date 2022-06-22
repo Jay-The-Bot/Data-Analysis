@@ -38,7 +38,6 @@
 
 5. This will add these 3 data points in the graph.
 
-
 ## Types of Functions
 
 1. `plt.clf()` -
@@ -56,4 +55,3 @@
    1. It has 2 arguments, `True` and `False`.
    2. If it is True it will show the grid lines while creating the plot.
    3. By default it is false.
-
