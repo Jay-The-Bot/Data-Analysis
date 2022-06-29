@@ -88,9 +88,9 @@ Data can come in many forms: every row is a measurement or an observation, and f
    1. Pandas assign some automatic row labels.
    2. To specify them manually, you can set the index attribute of BRICS list with correct labels.
 
-For huge amounts of data, we cannot use the Manual Method.
+2. For huge amounts of data, we cannot use the Manual Method.
 
-2. Import data from an External File to create a DataFrame -
+3. Import data from an External File to create a DataFrame -
 
    1. Code ->
 
