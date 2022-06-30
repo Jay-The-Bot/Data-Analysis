@@ -90,6 +90,8 @@ Select data from Pandas dataframe -
    1. The are various ways to select the column.
    2. What's important here, is that we ideally get a Pandas Series, not a Pandas DataFrame.
    3. E.g - `brics['area']`
+   4. Selecting Multiple Columns only of intrest ->
+   5. E.g - `netflix_movies_col_subset = netflix_df_movies_only[['title', 'country', 'genre', 'release_year', 'duration']] `
 2. do the comparison on the selected column
    1. E.g - `is_huge = brics['area'] > 8`.
    2. Now we will get a series containing booleans.
