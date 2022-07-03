@@ -208,7 +208,7 @@ There are numerous ways in which you can index and select data from DataFrames, 
    13. We can also use loc to select all rows but only a specific number of columns.
    14. Simply replace the first list that specifies the row labels with a colon, a slice going from beginning to end. This time, the intersection spans all rows, but only two columns.
    15. E.g - `brics.loc[:, ['country', 'capital']]`.
-   16. ![Recap](img1.png)
+   16. ![Recap](Images/Img%20-%201.png)
 7. `brics.iloc[]` -
    1. If you want to subset Pandas Data frame based on their positions. or index, you'll need to use the iloc function.
    2. The df starts from 0, so the first element is the 0th element.
