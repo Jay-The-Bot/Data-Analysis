@@ -1,3 +1,5 @@
+Assessment Name -> Data Manipulation with Python
+
 Q1 ->
 print(df.starts.x(lambda x: x / 1000)) -> wrong
 print(df.stars.transform(lambda x: x / 1000)) -> right
@@ -5,7 +7,7 @@ print(df.stars.transform(lambda x: x / 1000)) -> right
 To calculate quantile -> 
 Q1 = df['age'].quantile(0.25) -> Correct way
 Q3 = df['age'].quantile(0.75) -> Correct way
-Find answer to the question -> Calculate the interquartile range of the age of 100 customers who have recently bought products from your website.
+Find the answer to the question -> Calculate the interquartile range of the age of 100 customers who have recently bought products from your website.
 
 sns.lineplot(x='', y='', data=) -> plots a line plot
 sns.scatterplot(x='', y='', data=) -> plots a scatter plot

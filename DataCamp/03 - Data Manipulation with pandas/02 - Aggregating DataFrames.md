@@ -115,6 +115,10 @@ Pivot tables are another way of calculating grouped summary statistics.
    7. E.g - `dogs.group_by(['color', 'breed'])['weight_kg'].mean()`.
    8. Here, we group by color and breed, select the weight column and take the mean.
    9. This gives us the mean weight of each breed of each color.
+   10. We can also have different groupby for each rows.
+   11. E.g - `cnt_by_gid = top_tracks.groupby(['gid'], as_index=False).agg({'tid': 'count'})`
+   12. Here we are using the count on the tid column.
+   13. Remember to add the curly brackets while running the agg function. Else it will result in a Syntax Error.
 7. `dogs.pivot_table(values='weight_kg', index='color')` -
    1. The values argument is the one that you want to summarize.
    2. And the index column that you want to group by.
