@@ -37,9 +37,27 @@ The above code would read the file produce the graph.
 ## Types of Functions
 
 1. `print()` -> Will print the variable inside the parenthesis.
-2. `pd.read_csv()` -> turns a CSV file into a table in Python.
+2. `pd.read_csv()` -> turns a CSV file into a DataFrame in Python.
    1. This function takes one argument, the name of the file as a string.
-3. `plt.plot()` -> Turns data into line plot.
+   2. E.g - `pd.read_csv(file_name, nrows=6)`
+   3. The nrows function will only accept only 6 rows for the entire file data present in the file_name.
+3. `pd.read_pickle()` -
+   1. Load the pickled file data.pkl using pandas.
+   2. E.g - `pd.read_pickle('date.pkl')
+4. `pd.read_excel() -
+
+   1. Imports a excel file and converts it to a DataFrame.
+   2. E.g -
+
+      ```python
+         import pandas as pd
+         filename = "food.xlsx"
+         df = pd.read_excel(filename, "salad")
+      ```
+
+   3. Here df contains 2 excel sheets filename and salad.
+
+5. `plt.plot()` -> Turns data into line plot.
    1. `plt.plot(x_values, y_values)` -> This is the default format of plot function.
       1. We begin with the name of the function - plt.plot(), like all function we will be putting arguments inside of parentheses.
       2. The first argument is the x-values we want to plot.
@@ -51,7 +69,7 @@ The above code would read the file produce the graph.
       2. The list of allowed colors is in the link above.
    4. `plt.plot(linewidth='')` -> This will change the line width for increasing the `linewidth` of a line.
       1. The default `linewidth` is 1.
-4. `plt.show()` -> Displays the plot in a new window.
+6. `plt.show()` -> Displays the plot in a new window.
    1. If we only type `plt.plot()` nothing will showup. Thats because Python wants to give us the opportunity to enter other commands.
    2. When we want to display everything we've made, we use `plt.show()` function.
    3. This function takes no arguments

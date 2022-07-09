@@ -29,6 +29,8 @@ for var in seq :
 
 "for each var in sequence, execute expression"
 
+### With Loop
+
 ### Loop Data Structures Part 1
 
 Looping over dicitonary and Dataframe

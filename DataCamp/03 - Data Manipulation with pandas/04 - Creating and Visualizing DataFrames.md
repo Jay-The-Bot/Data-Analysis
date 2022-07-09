@@ -126,3 +126,11 @@ If we take a look at the new file, it contains the BMI column.
    3. There are also many sophisticated techniques for replacing missing values, which you can learn more about in our course about missing data.
 4. `new_dogs.to_csv('new_dogs_with_bmi.csv')` -
    1. Saves the edited dataframe here `new_dogs` to the csv file .
+5. `air_force_nz.query('gender == "FEMALE"').tail(1)` -
+
+   1. Here the query gives us all the females from the DataFrame air_force_nz.
+   2. And then the tail method return the last row of the DataFrame.
+   3. The argument 1 means last one row.
+   4. For multiple rows enter the number 2, 3, 4, ...
+
+   5. tail lets you pick a last element from DataFrame Column.

@@ -21,4 +21,21 @@ Describe a data frame ->
 Calculate the count, mean, std, min, max, etc.
 
 Calculate the inter-quantile range ->
-IQR = stats.iqr(pH)
+IQR = stats.iqr(pH) Not revised
+
+1st attempt -> 85
+2nd attempt -> 116 (10 right, 5 wrong)
+
+Q1 -> columns function
+
+Rename Column Names ->
+
+import pandas as pd
+
+column_names = {
+	'slope_of_peak_exercise_st_segment': 'slope',
+	'fasting_blood_sugar_gt_120_mg_per_dl': 'fbs' 
+}
+
+heart_clean = heart.rename(columns=column_names)
+print(heart_clean.head())

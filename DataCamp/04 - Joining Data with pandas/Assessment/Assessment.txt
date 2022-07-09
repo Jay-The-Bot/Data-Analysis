@@ -1,1 +1,17 @@
 Assessment Name -> Importing & Cleaning Data with Python
+
+Q1 -> student['name'] = student['name'].str.strip() -> This removes the extra spaces present in any part of the data.
+
+Q3 -> data = np.loadtxt("data.txt", delimiter="\t", dtype="int") -> Loads the file as single data type object using numpy.
+
+Q4 -> nrows
+
+Q6 -> with loop
+
+Q7 -> pd.read_pickle
+
+Q8 -> print(pd.to_datetime(l)) -> Converts l to dateTime format.
+
+Q9 -> print(df.height.astype('int64')) -> Changes the datatype of the column height.
+
+1st Attempt -> 5 Correct, 10 Wrong 
