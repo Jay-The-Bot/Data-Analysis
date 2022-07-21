@@ -61,7 +61,7 @@ We can also track subgroups over time with line plots.
    17. Setting the _style_ parameter to a variable name will use different point styles for each value of the variable.
    18. Setting the alpha parameter to a value between 0 and 1 will wary the transparency of the points in the plot, with 0 being completely transparent and 1 being completely non-transparent.
    19. This customization can be useful when you have many overlapping points on the scatter plots, so you can see which areas of the plot have more or less observations.
-2. `sns.relplot(x='hour', y='NO_2_mean', data=air_df_loc_mean, kind='line', style='location', hue='location', marker=True, ci='sd')` -
+2. `sns.relplot(x='hour', y='NO_2_mean', data=air_df_loc_mean, kind='line', style='location', hue='location', marker=True, ci='sd', dashes=False)` -
    1. By specifying _kind_ to _line_ we can create a line plot an more easily see how the average nitrogen dioxide level fluctuates throughout the day.
    2. We can also track subgroups over time with line plots.
    3. Setting the _style_ and _hue_ parameters equal to the variable name _location_ creates different lines for each region that vary both line styles and colors.
@@ -75,3 +75,5 @@ We can also track subgroups over time with line plots.
    11. Instead of visualizing a confidence interval, we may want to see how varied the measurements of nitrogen dioxide are across the different collection stations at a given point in time.
    12. To visualize this, set the **ci** parameter equal to the string _sd_ to make the shaded area represent the standard deviation, which shows the spread of the distribution of observations at each x value.
    13. We can also turn off the confidence interval by setting the _ci_ parameter equal to _None_ (Not in a string).
+   14. Use the dashes parameter to use solid lines for all countries, while still allowing for different marker styles for each line.
+   15. Else each line will have a different linestyle and have markers, by setting the parameter to false all the lines become solid lines.
